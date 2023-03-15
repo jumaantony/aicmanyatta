@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-white shadow-md mt-5 p-6 relative">
+    <nav className="flex items-center justify-between flex-wrap bg-white shadow-md mt-5 p-6 sticky">
 
       <div className="flex items-center flex-shrink-0 text-white mr-6">
        {/* logo image*/}
@@ -42,12 +42,12 @@ const Navbar = () => {
       </div>
       <div
         className={`w-full ${
-          isOpen ? 'fixed p-10 inset-y-0 right-0 bg-transparent bg-[#ef444480] w-[50%]' : 'hidden'
+          isOpen ? 'fixed p-10 inset-y-0 right-0 bg-transparent bg-[#fc581d80]' : 'hidden'
         } lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
       >
         {isOpen ? 
           <button
-            className="absolute top-16 right-6 px-3 py-3  font-bold rounded transition duration-700 border rounded text-red-400 border-black hover:text-black hover:border-red-400"
+            className="absolute top-16 right-5 px-3 py-3  font-bold rounded transition duration-700 border rounded text-red-400 border-black hover:text-black hover:border-red-400"
             onClick={toggleMenu}
             type="button"
             >
@@ -66,7 +66,7 @@ const Navbar = () => {
             <a
               key={nav.id}
               href={nav.id}
-              className="block font-bold mt-4 lg:inline-block lg:mt-0 text-black hover:text-red-500 sm:hover:text-white mr-4 transition duration-700"
+              className="block font-bold mt-4 lg:inline-block lg:mt-0 text-black lg:hover:text-red-500 sm:hover:text-white mr-4 transition duration-700"
             >
               {nav.title}
             </a>
@@ -74,6 +74,16 @@ const Navbar = () => {
           ))}
           
 
+        </div>
+
+        <div className='mt-8 md-mt-0'>
+            <a href='#' className='md:mr-2 md:inline block mt-5 md:mt-0 tracking-wider w-36 text-center bg-red-700 p-4 rounded hover:text-white transition duration-700' >
+              LIVE STREAM
+            </a>
+
+            <a href='#' className='mt-5 md:mt-0 md:inline block tracking-wider w-24 text-center bg-red-700 p-4 rounded hover:text-white transition duration-700' >
+              GIVE
+            </a>
         </div>
       </div>
     </nav>
