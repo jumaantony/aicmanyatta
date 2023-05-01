@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Events from './components/Events';
 import InformationCenter from './components/InformationCenter';
-import Store from './components/Store';
+import Sermons from './components/Sermons';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/information_center'  element={<InformationCenter/>}/>
+            <Route path='/sermons'  element={<Sermons />}/>
             <Route path='/events' element={<Events />} />
-            <Route path='/store'  element={<Store />}/>
+            <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>

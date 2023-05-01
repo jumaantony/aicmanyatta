@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import logo from '../assets/logo.png'
+import logo from '../assets/logo1.png'
 import { navLinks } from '../constants';
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -13,15 +13,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-white shadow-md mt-5 p-6 sticky">
+    <nav className="flex items-center justify-between flex-wrap shadow-md mt-5 sticky bg-black pr-4">
 
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
+      <div className="flex items-center flex-shrink-0 text-white">
        {/* logo image*/}
-        <a href='/home' className="">
-          <img src={logo} alt='logo-img' className='w-[80px] h-[80px]'/>
+        <a href='/' className="">
+          <img src={logo} alt='logo-img' className=' w-100 h-[80px]'/>
         </a>
       </div>
 
+      {/* Toggle menu */}
       <div className="block lg:hidden">
         {!isOpen ? 
           <button
@@ -40,10 +41,11 @@ const Navbar = () => {
         }
 
       </div>
+
       <div
         className={`w-full ${
-          isOpen ? 'fixed p-10 inset-y-0 right-0 bg-transparent bg-[#fc581d80]' : 'hidden'
-        } lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
+          isOpen ? 'fixed p-10 inset-y-0 right-0  bg-[#fc581d80]' : 'hidden'
+        } lg:block flex-grow lg:flex lg:items-center lg:w-auto bg-black`}
       >
         {isOpen ? 
           <button
@@ -60,13 +62,13 @@ const Navbar = () => {
           <div />
         }
 
-        <div className="text-lg lg:flex-grow lg:text-center"
+        <div className="text-lg lg:flex-grow lg:text-center bg-black"
           >
           {navLinks.map((nav, index) => (
             <a
               key={nav.id}
               href={nav.id}
-              className="block font-bold mt-4 lg:inline-block lg:mt-0 text-black lg:hover:text-red-500 sm:hover:text-white mr-4 transition duration-700"
+              className="block font-bold mt-4 lg:inline-block lg:mt-0 text-white lg:hover:text-red-500 sm:hover:text-white mr-4 transition duration-700"
             >
               {nav.title}
             </a>
@@ -76,12 +78,12 @@ const Navbar = () => {
 
         </div>
 
-        <div className='mt-8 md-mt-0'>
-            <a href='#' className='md:mr-2 md:inline block mt-5 md:mt-0 tracking-wider w-36 text-center bg-red-700 p-4 rounded hover:text-white transition duration-700' >
+        <div className='mt-3 bg-black'>
+            <a href='#' className='md:mr-2 md:inline block mt-5 md:mt-0 tracking-wider w-36 text-center bg-red-700 p-3 rounded hover:text-white transition duration-700 font-medium' >
               LIVE STREAM
             </a>
 
-            <a href='#' className='mt-5 md:mt-0 md:inline block tracking-wider w-24 text-center bg-red-700 p-4 rounded hover:text-white transition duration-700' >
+            <a href='#' className='mt-5 md:mt-0 md:inline block tracking-wider w-24 text-center bg-red-700 p-3 rounded hover:text-white transition duration-700 font-medium' >
               GIVE
             </a>
         </div>
