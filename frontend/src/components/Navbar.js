@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import logo from '../assets/logo1.png'
 import { navLinks } from '../constants';
 
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { FaBars, FaWindowClose } from 'react-icons/fa';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,13 +27,13 @@ const Navbar = () => {
       <div className="block lg:hidden">
         {!isOpen ? 
           <button
-            className="flex items-center px-3 py-2 transition duration-700 border rounded text-red-400 border-black hover:text-black hover:border-red-400"
+            className="flex items-center px-3 py-2 transition duration-700 border rounded text-white-400 hover:border-red-400"
             type="button"
             onClick={toggleMenu}
           >
-            <Bars3Icon
-              className="fill-current text-md h-5 w-5 font-bold"
-              viewBox="0 0 20 20"
+            <FaBars
+              className="fill-current text-md h-5 w-5 font-bold text-white"
+              
             />
           </button>
         : 
@@ -53,9 +54,9 @@ const Navbar = () => {
             onClick={toggleMenu}
             type="button"
             >
-            <XMarkIcon
-              className="fill-current h-5 w-5 text-md font-bold"
-              viewBox="0 0 20 20"
+            <FaWindowClose
+              className="fill-current h-5 w-5 text-md font-bold text-white"
+              
             />
           </button>
           :
@@ -68,7 +69,7 @@ const Navbar = () => {
             <a
               key={nav.id}
               href={nav.id}
-              className="block font-bold mt-4 lg:inline-block lg:mt-0 text-white lg:hover:text-red-500 sm:hover:text-white mr-4 transition duration-700"
+              className="block font-bold mt-4 lg:inline-block lg:mt-0 text-white hover:text-red-500 mr-4 transition duration-700"
             >
               {nav.title}
             </a>
