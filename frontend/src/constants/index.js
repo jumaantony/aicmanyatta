@@ -5,8 +5,8 @@ export const navLinks = [
       title: "Home",
     },
     {
-      id: "information_center",
-      title: "Information Center",
+      id: "about",
+      title: "About Us",
     },
     {
       id: "sermons",
